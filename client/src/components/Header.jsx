@@ -1,16 +1,20 @@
 import React from 'react'
 import HeaderItem from './HeaderItem'
 
-function Header() {
-    return (
-        <header className="header-container row col-12 py-2">
-            <div className="logo col-6 col-md-2">
+import logo from '../assets/images/logo.png';
 
+function Header() {
+    const headerItems = [{title: "Me", link: "/"}, 
+    {title: "Therapy", link: "therapy"}, {title: "Contact", link: "contact"}]
+    return (
+        <header className="header-container font-header row text-center py-3">
+            <div className="logo col-12 col-md-3">
+                <img className="logo" src={logo} alt={"logo"} />
             </div>
-            <div className="header-items col-6 col-md-10 row">
-                <HeaderItem title={"Me"} classes={"col-12 col-md-4"} link={"/"} />
-                <HeaderItem title={"Therapy"} classes={"col-12 col-md-4"} link={"therapy"}  />
-                <HeaderItem title={"Contact"} classes={"col-12 col-md-4"} link={"contact"}  />
+            <div className="header-items col-12 col-md-9 row">
+                {
+                    headerItems.map(item => <HeaderItem classes={"col-4"} title={item.title} link={item.link} />)
+                }
             </div>
         </header>
     )
