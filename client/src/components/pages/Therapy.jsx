@@ -17,7 +17,7 @@ const Therapy = () => {
 
     const TherapyNaviItem = props => {
         return (
-            <li className="cursor-pointer col-4 float-left">
+            <li className="cursor-pointer font-header col-4 float-left">
                 <h2 id={props.id} onClick={(e) => handleClick(props.id)}>{props.title}</h2>
             </li>
         )
@@ -25,7 +25,8 @@ const Therapy = () => {
 
     return (
     <div className="therapy-page col-12">
-        <div ref={therapyItemContainer} className="therapy-item-container transition-opacity font-basic p-md-5 p-1">
+        <div ref={therapyItemContainer} className="therapy-item-container transition-opacity font-basic
+         col-md-8 offset-md-2 p-md-5 p-2">
             {
                 currentSelection === 'yksilo' ? (
                     <span>{therapies.yksilo}</span>

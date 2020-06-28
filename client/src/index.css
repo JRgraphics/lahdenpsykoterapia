@@ -1,11 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 body {
   position: fixed;
   height: 100vh;
   width: 100vw;
   margin: 0;
+}
+
+.header-container {
+  height: 82px;
+}
+
+.home-page, .therapy-page, .contact-page {
+  width: 100vw;
+  height: calc(100% - 82px);
+  background: url(./assets/images/lahden_ps_bg.jpg) top left no-repeat;
+}
+
+.switch-wrapper {
+  position: relative;
+}
+
+.switch-wrapper > div {
+  position: absolute;
 }
 
 a, a:hover, a:visited, a:active {
@@ -39,7 +58,8 @@ a:active {
 }
 
 .font-basic {
-  font-family: 'Catamaran', sans-serif;
+  /*font-family: 'Catamaran', sans-serif;*/
+  font-family: 'Questrial', sans-serif;
 }
 
 ul {
@@ -55,9 +75,17 @@ ul {
   position: fixed;
   bottom: 0;
   left: 0;
-  max-width: 20%;
+  max-width: 35%;
+  max-height: 40%;
   -webkit-animation: slide-in-profile-img 1s ease-in-out forwards;
-          animation: slide-in-profile-img 1s ease-in-out forwards;
+  animation: slide-in-profile-img 1s ease-in-out forwards;
+}
+
+@media screen and (max-width: 768px) {
+  .profile-img {
+    max-width: 70%;
+    max-height: 40%;
+  }
 }
 
 .therapy-nav {
@@ -67,6 +95,22 @@ ul {
 
 .transition-opacity {
   transition: opacity 0.25s;
+}
+
+.btn-main {
+  border: 1px solid #333333;
+  border-radius: 10px 0;
+  transition: transform 0.1s ease-in-out;
+}
+
+.btn-main:active {
+  transform: scale(0.7)
+}
+
+.btn-main__cancel {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 @keyframes fade-in {
