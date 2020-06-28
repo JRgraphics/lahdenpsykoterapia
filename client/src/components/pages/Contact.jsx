@@ -1,12 +1,10 @@
 import React, { useRef, useState } from 'react';
-import { disableBodyScroll } from 'body-scroll-lock';
 
 const Contact = () => {
     const [toggleStatus, setToggleStatus] = useState(false)
     const toggleButton = useRef();
     const contactInfoContainer = useRef();
     const formContainer = useRef();
-    disableBodyScroll(formContainer);
 
     const handleClick = () => {
         contactInfoContainer.current.style.opacity = 0;
@@ -19,8 +17,8 @@ const Contact = () => {
     }
 
     return (
-    <div className="contact-page col-12 p-md-5 p-1">
-        <div ref={contactInfoContainer} className="contact-info-container transition-opacity font-basic 
+    <div className="contact-page p-md-5 p-1">
+        <div ref={contactInfoContainer} className="contact-info-container transition-opacity  
         text-center col-md-6 col-12 offset-md-3">
             {
                 !toggleStatus ? (

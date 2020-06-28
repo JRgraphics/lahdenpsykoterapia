@@ -7,7 +7,7 @@ function Header() {
     const headerItems = [{title: "Me", link: "/"}, 
     {title: "Therapy", link: "therapy"}, {title: "Contact", link: "contact"}]
     return (
-        <header className="header-container font-header row text-center py-3">
+        <header className="header-container font-header row text-center py-md-3 py-2">
             <div className="logo col-12 col-md-3">
                 <img className="logo" src={logo} alt={"logo"} />
             </div>
