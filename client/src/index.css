@@ -6,9 +6,20 @@
 body {
   height: 100vh;
   width: 100vw;
+  overflow: scroll;
   margin: 0;
   font-family: 'Questrial', sans-serif;
   color: #ffffff;
+}
+
+.body-bg {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: url(./assets/images/plank.jpg) left center;
+  background-size: cover;
 }
 
 .header-container {
@@ -18,8 +29,6 @@ body {
 .home-page, .therapy-page, .contact-page {
   width: 100vw;
   height: calc(100vh - 82px);
-  background: url(./assets/images/lahden_ps_bg.jpg) top left no-repeat;
-  background-size: cover;
 }
 
 .switch-wrapper {
@@ -32,7 +41,7 @@ body {
 
 a, a:hover, a:visited, a:active {
   text-decoration: none;
-  color: #333333;
+  color: #ffffff;
 }
 
 a:hover {
@@ -48,12 +57,6 @@ a:active {
 
 .cursor-pointer:hover {
   cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-  h2 {
-    font-size: 1.3rem
-  }
 }
 
 .font-header {
@@ -84,11 +87,16 @@ ul {
 }
 
 .info-container {
-  border-top: 2px solid #ffffff;
+  
+}
+
+.info-container-invert {
+  color: #000000;
+  background-color: #ffffff;
 }
 
 .profile-img {
-  max-width: 100%;
+  max-width: 200px;
   max-height: 150px;
   -webkit-animation: slide-in-profile-img 1s ease-in-out forwards;
   animation: slide-in-profile-img 1s ease-in-out forwards;
@@ -122,6 +130,16 @@ ul {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 1.3rem
+  }
+
+  .profile-img {
+    max-width: 80%;
+  }
 }
 
 @keyframes fade-in {

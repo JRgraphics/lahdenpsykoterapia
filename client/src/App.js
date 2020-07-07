@@ -13,6 +13,7 @@ const App = () => {
   document.body.ontouchmove = (e) => { e.preventDefault(); return false; };
   return (
     <Router className="App">
+      <div className="body-bg"></div>
       <Header />
       <AnimatedSwitch
       atEnter={{ opacity: 0 }}
