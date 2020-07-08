@@ -5,14 +5,15 @@ import logo from '../assets/images/logo_white.png';
 
 function Header() {
 
-    const headerItems = [{title: "Me", link: "/"}, 
-    {title: "Therapy", link: "therapy"}, {title: "Contact", link: "contact"}]
+    const headerItems = [{title: "Esittely", link: "/"}, 
+    {title: "Terapia", link: "therapy"}, {title: "Yhteystiedot", link: "contact"}]
+
     return (
-        <header className="header-container font-header row text-center col-12 py-md-3 py-2">
+        <header className="header-container font-header row d-flex align-items-center text-center mx-0 mb-2 py-md-3 py-2">
             <div className="logo col-12 col-md-3">
                 <img className="logo" src={logo} alt={"logo"} />
             </div>
-            <div className="header-items col-12 col-md-9 row">
+            <div className="header-items col-12 col-md-9 row mx-0">
                 {
                     headerItems.map(item => <HeaderItem classes={"col-4"} title={item.title} link={item.link} />)
                 }

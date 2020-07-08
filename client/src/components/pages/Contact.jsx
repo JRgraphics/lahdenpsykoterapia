@@ -37,14 +37,20 @@ const Contact = () => {
                         <button className="btn btn-main btn-main__cancel py-1 px-4 mx-3" onClick={() => handleClick()}>{"<-"}</button>
                         <h2>Lähetä viesti</h2>
                         <form id="contact-form" className="form-group mt-4">
-                            <label className="col-12 px-0 text-left">Etunimi</label>
-                            <input id="first-name" className="form-control" type="text" />
-                            <label className="col-12 px-0 text-left">Sukunimi</label>
-                            <input id="last-name" className="form-control" type="text" />
-                            <label className="col-12 px-0 text-left">Email</label>
-                            <input id="email" className="form-control" type="text" />
-                            <label className="col-12 px-0 text-left">Viesti</label>
-                            <input id="message" className="form-control" type="text" />
+                            <label className="form-label col-12 px-0 text-left">Etunimi</label>
+                            <input id="first-name" className="form-control mb-1" type="text" />
+                            <label className="form-label col-12 px-0 text-left">Sukunimi</label>
+                            <input id="last-name" className="form-control mb-1" type="text" />
+                            <label className="form-label col-12 px-0 text-left">Email</label>
+                            <input id="email" className="form-control mb-1" type="text" />
+                            <label className="form-label col-12 px-0 text-left">Viesti</label>
+                            <textarea id="message" className="form-control" />
+                            <div className="text-center mt-2">
+                            <button ref={toggleButton} className="btn btn-main py-2 px-5 mr-1"
+                            onClick={(e) => {e.preventDefault()}}>Lähetä</button>
+                            <button ref={toggleButton} className="btn btn-main py-2 px-5 ml-1"
+                            onClick={(e) => {e.preventDefault()}}>Tyhjennä</button>
+                            </div>
                         </form>
                     </div>
                 )

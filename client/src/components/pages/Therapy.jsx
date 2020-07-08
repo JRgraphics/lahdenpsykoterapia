@@ -17,7 +17,7 @@ const Therapy = () => {
 
     const TherapyNaviItem = props => {
         return (
-            <li className="cursor-pointer col-4 float-left">
+            <li className="cursor-pointer col-4">
                 <h2 id={props.id} onClick={(e) => handleClick(props.id)}>{props.title}</h2>
             </li>
         )
@@ -25,8 +25,15 @@ const Therapy = () => {
 
     return (
     <div className="therapy-page">
+        <div className="therapy-nav text-center col-md-8 offset-md-2 col-12">
+            <ul className="col-12 row mx-0">
+                <TherapyNaviItem id={"yksilo"} title={"Yksilö"} />
+                <TherapyNaviItem id={"pari"} title={"Pari"} />
+                <TherapyNaviItem id={"perhe"} title={"Perhe"} />
+            </ul>
+        </div>
         <div ref={therapyItemContainer} className="therapy-item-container transition-opacity 
-         col-md-8 mx-auto p-md-5 p-3">
+         text-justify col-md-8 mx-auto p-md-5 p-3">
             {
                 currentSelection === 'yksilo' ? (
                     <span>{therapies.yksilo}</span>
@@ -38,13 +45,6 @@ const Therapy = () => {
                     null
                 )
             }
-        </div>
-        <div className="therapy-nav text-center col-12">
-            <ul className="col-12 row">
-                <TherapyNaviItem id={"yksilo"} title={"Yksilö"} />
-                <TherapyNaviItem id={"pari"} title={"Pari"} />
-                <TherapyNaviItem id={"perhe"} title={"Perhe"} />
-            </ul>
         </div>
     </div>
     )

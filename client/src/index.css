@@ -3,13 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 
-body {
-  height: 100vh;
+body {  
   width: 100vw;
-  overflow: scroll;
-  margin: 0;
+  overflow-x: hidden;
   font-family: 'Questrial', sans-serif;
   color: #ffffff;
+  text-shadow: 0 0 5px #000, 0 0 2px #000, 0 0 10px #000;
 }
 
 .body-bg {
@@ -18,17 +17,18 @@ body {
   width: 100vw;
   top: 0;
   left: 0;
-  background: url(./assets/images/plank.jpg) left center;
+  background: url(./assets/images/bg.jpg) left center;
   background-size: cover;
 }
 
 .header-container {
   height: 82px;
+  z-index: 999;
 }
 
 .home-page, .therapy-page, .contact-page {
   width: 100vw;
-  height: calc(100vh - 82px);
+  overflow-y: auto;
 }
 
 .switch-wrapper {
@@ -42,11 +42,15 @@ body {
 a, a:hover, a:visited, a:active {
   text-decoration: none;
   color: #ffffff;
+  transition: transform 0.2s ease-in-out;
 }
 
 a:hover {
-  -webkit-animation: blink 1.5s forwards infinite;
-          animation: blink 1.5s forwards infinite;
+  transform: scale(1.1);
+}
+
+a:active {
+  transform: scale(0.8);
 }
 
 a:active {
@@ -103,8 +107,7 @@ ul {
 }
 
 .therapy-nav {
-  position: fixed;
-  bottom: 0;
+  
 }
 
 .transition-opacity {
@@ -113,8 +116,10 @@ ul {
 
 .btn-main {
   color: #ffffff;
+  text-shadow: 0 0 5px #000, 0 0 2px #000, 0 0 10px #000;
   border: 1px solid #ffffff;
   border-radius: 10px 0;
+  box-shadow: 0 0 10px #000000;
   transition: transform 0.1s ease-in-out;
 }
 
@@ -132,9 +137,21 @@ ul {
   left: 0;
 }
 
+.header-item {
+  font-size: 1.5rem;
+}
+
+.form-label {
+  font-size: 1.1rem;
+}
+
 @media screen and (max-width: 768px) {
   h2 {
     font-size: 1.3rem
+  }
+
+  .header-item {
+    font-size: 1.1rem;
   }
 
   .profile-img {
@@ -187,8 +204,8 @@ ul {
 @-webkit-keyframes slide-in-profile-img {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
   100% {
     opacity: 1;
@@ -200,8 +217,8 @@ ul {
 @keyframes slide-in-profile-img {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
   100% {
     opacity: 1;
