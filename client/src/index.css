@@ -1,19 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
-body {  
+html,
+body,
+#root {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+}
+
+div,
+p,
+span {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
   width: 100vw;
   overflow-x: hidden;
-  font-family: 'Questrial', sans-serif;
+  font-family: "Questrial", sans-serif;
   color: #ffffff;
   text-shadow: 0 0 5px #000, 0 0 2px #000, 0 0 10px #000;
 }
 
 .body-bg {
   position: fixed;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   top: 0;
   left: 0;
@@ -26,20 +40,35 @@ body {
   z-index: 999;
 }
 
-.home-page, .therapy-page, .contact-page {
+.home-page,
+.therapy-page,
+.contact-page {
   width: 100vw;
   overflow-y: auto;
 }
 
+.home__title--name {
+  margin-left: 10px;
+}
+
 .switch-wrapper {
+  height: calc(100% - 90px);
   position: relative;
 }
 
 .switch-wrapper > div {
+  height: 100%;
   position: absolute;
 }
 
-a, a:hover, a:visited, a:active {
+.page {
+  height: 100%;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
   text-decoration: none;
   color: #ffffff;
   transition: transform 0.2s ease-in-out;
@@ -55,8 +84,8 @@ a:active {
 
 a:active {
   -webkit-transform: scale(0.7);
-      -ms-transform: scale(0.7);
-          transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
 }
 
 .cursor-pointer:hover {
@@ -65,7 +94,7 @@ a:active {
 
 .font-header {
   /*font-family: 'Catamaran', sans-serif;*/
-  
+
   /*font-family: 'Raleway', sans-serif;*/
   color: #000000;
 }
@@ -79,19 +108,47 @@ ul {
   width: auto;
 }
 
+.carousel .slide {
+  background: transparent !important;
+}
+.control-dots {
+  margin: 0 !important;
+}
+
+.info-container {
+  padding: 0 50px;
+}
+
+.carousel__item {
+  font-size: 1.2rem;
+  margin: 20px;
+}
+
+.therapy-item-container {
+  font-size: 1.2rem;
+}
+
 @media screen and (max-width: 768px) {
   .logo {
     height: 35px;
+  }
+
+  .info-container {
+    padding: 0 12px;
+  }
+
+  .carousel__item {
+    font-size: 1.1rem;
+  }
+
+  .therapy-item-container {
+    font-size: 1.1rem;
   }
 }
 
 .home-page__logo {
   max-width: 100%;
   max-height: 100px;
-}
-
-.info-container {
-  
 }
 
 .info-container-invert {
@@ -104,14 +161,25 @@ ul {
   max-height: 150px;
   -webkit-animation: slide-in-profile-img 1s ease-in-out forwards;
   animation: slide-in-profile-img 1s ease-in-out forwards;
+  filter: drop-shadow(0px -2px 2px rgba(0, 0, 0, 0.5));
 }
 
-.therapy-nav {
-  
+.carousel-root {
+  height: calc(100% - 168px);
+}
+
+.carousel,
+.slider-wrapper,
+.slider {
+  height: 100%;
 }
 
 .transition-opacity {
   transition: opacity 0.25s;
+}
+
+.btn {
+  outline: none;
 }
 
 .btn-main {
@@ -128,7 +196,8 @@ ul {
 }
 
 .btn-main:active {
-  transform: scale(0.7)
+  outline: none;
+  transform: scale(0.7);
 }
 
 .btn-main__cancel {
@@ -147,7 +216,7 @@ ul {
 
 @media screen and (max-width: 768px) {
   h2 {
-    font-size: 1.3rem
+    font-size: 1.3rem;
   }
 
   .header-item {
@@ -156,6 +225,27 @@ ul {
 
   .profile-img {
     max-width: 80%;
+  }
+
+  .carousel.carousel-slider .control-arrow {
+    padding: 0 !important;
+  }
+
+  .carousel .control-prev.control-arrow:before {
+    border-right: 18px solid #fff !important;
+  }
+
+  .carousel .control-next.control-arrow:before {
+    border-left: 18px solid #fff !important;
+  }
+
+  .carousel .control-arrow:before,
+  .carousel.carousel-slider .control-arrow:before {
+    margin: 0 5px;
+    display: inline-block;
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+    content: "";
   }
 }
 
@@ -205,12 +295,12 @@ ul {
   0% {
     opacity: 0;
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
   }
   100% {
     opacity: 1;
     -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+    transform: translateX(0%);
   }
 }
 
@@ -218,11 +308,11 @@ ul {
   0% {
     opacity: 0;
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
   }
   100% {
     opacity: 1;
     -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+    transform: translateX(0%);
   }
 }
