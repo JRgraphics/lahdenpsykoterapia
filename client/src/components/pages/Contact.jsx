@@ -47,9 +47,12 @@ const Contact = () => {
               ref={toggleButton}
               className="btn btn-main py-2 px-5"
               onClick={() => handleClick()}
+              disabled={true}
+              style={{ opacity: "0.4" }}
             >
               Ota yhteyttä
             </button>
+            <p>Tällä hetkellä ei ikävä kyllä ole vapaita terapiapaikkoja.</p>
           </div>
         ) : (
           <div ref={formContainer} className="">
